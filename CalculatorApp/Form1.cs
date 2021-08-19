@@ -41,16 +41,55 @@ namespace CalculatorApp
         private void plusButton_Click(object sender, EventArgs e)
         {
             function = '+';
+            first = userinput;
+            userinput = "";
         }
 
         private void equalButton_Click(object sender, EventArgs e)
         {
-            function = '=';
+            second = userinput;
+            double firstnum, secondnum;
+            firstnum = Convert.ToDouble(first);
+            secondnum = Convert.ToDouble(second);
+
+            //plus
+            if( function == '+')
+            {
+                result = firstnum + secondnum;
+            }
+            //minus
+            else if(function == '-')
+            {
+                result = firstnum - secondnum;
+            }
+            //divide
+            else if (function == '/')
+            {
+                result = firstnum / secondnum;
+            }
+            //multiply
+            else if (function == '*')
+            {
+                if(secondnum == '0')
+                {
+                    calculatorDisplay.Text = "Error";
+                }
+                else
+                {
+                    result = firstnum * secondnum;
+                }
+            }
+                
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            function = 'C';
+            
+            first = "";
+            second = "";
+            userinput = "";
+            result = 0.0;
+            calculatorDisplay.Text = "0";
         }
 
         private void perButton_Click(object sender, EventArgs e)
@@ -60,52 +99,72 @@ namespace CalculatorApp
 
         private void zeroButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "0";
+            calculatorDisplay.Text = "";
+            userinput += "0";
+            calculatorDisplay.Text += userinput;
         }
 
         private void oneButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "1";
+            calculatorDisplay.Text = "";
+            userinput += "1";
+            calculatorDisplay.Text += userinput;
         }
 
         private void twoButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "2";
+            calculatorDisplay.Text = "";
+            userinput += "2";
+            calculatorDisplay.Text += userinput;
         }
 
         private void threeButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "3";
+            calculatorDisplay.Text = "";
+            userinput += "3";
+            calculatorDisplay.Text += userinput;
         }
 
         private void fourButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "4";
+            calculatorDisplay.Text = "";
+            userinput += "4";
+            calculatorDisplay.Text += userinput;
         }
 
         private void fiveButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "5";
+            calculatorDisplay.Text = "";
+            userinput += "5";
+            calculatorDisplay.Text += userinput;
         }
 
         private void sixButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "6";
+            calculatorDisplay.Text = "";
+            userinput += "6";
+            calculatorDisplay.Text += userinput;
         }
 
         private void sevenButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "7";
+            calculatorDisplay.Text = "";
+            userinput += "7";
+            calculatorDisplay.Text += userinput;
         }
 
         private void eightButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "8";
+            calculatorDisplay.Text = "";
+            userinput += "8";
+            calculatorDisplay.Text += userinput;
         }
 
         private void nineButton_Click(object sender, EventArgs e)
         {
-            calculatorDisplay.Text += "9";
+            calculatorDisplay.Text = "";
+            userinput += "9";
+            calculatorDisplay.Text += userinput;
         }
 
         private void decimalButton_Click(object sender, EventArgs e)

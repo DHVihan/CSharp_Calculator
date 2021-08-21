@@ -26,16 +26,22 @@ namespace CalculatorApp
         private void divButton_Click(object sender, EventArgs e)
         {
             function = '/';
+            first = userinput;
+            userinput = "";
         }
 
         private void mulButton_Click(object sender, EventArgs e)
         {
             function = '*';
+            first = userinput;
+            userinput = "";
         }
 
         private void minusButton_Click(object sender, EventArgs e)
         {
             function = '-';
+            first = userinput;
+            userinput = "";
         }
 
         private void plusButton_Click(object sender, EventArgs e)
@@ -56,28 +62,32 @@ namespace CalculatorApp
             if( function == '+')
             {
                 result = firstnum + secondnum;
+                calculatorDisplay.Text = result.ToString();
             }
             //minus
             else if(function == '-')
             {
                 result = firstnum - secondnum;
+                calculatorDisplay.Text = result.ToString();
             }
             //divide
             else if (function == '/')
             {
-                result = firstnum / secondnum;
-            }
-            //multiply
-            else if (function == '*')
-            {
-                if(secondnum == '0')
+                if (secondnum == '0')
                 {
                     calculatorDisplay.Text = "Error";
                 }
                 else
                 {
-                    result = firstnum * secondnum;
+                    result = firstnum / secondnum;
+                    calculatorDisplay.Text = result.ToString();
                 }
+            }
+            //multiply
+            else if (function == '*')
+            {
+                result = firstnum * secondnum;
+                calculatorDisplay.Text = result.ToString();
             }
                 
         }
@@ -94,7 +104,16 @@ namespace CalculatorApp
 
         private void perButton_Click(object sender, EventArgs e)
         {
-            function = '%';
+            
+            first = userinput;
+            
+            double firstnum;
+            firstnum = Convert.ToDouble(first);
+            result = firstnum / 100;
+            calculatorDisplay.Text = result.ToString();
+            
+
+
         }
 
         private void zeroButton_Click(object sender, EventArgs e)
